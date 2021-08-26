@@ -12,6 +12,8 @@ services:
     ports:
       - 8000:8000
       - 9229:9229
+    env_file:
+      - .env.development
     networks:
       - nesjs-network
     depends_on:
