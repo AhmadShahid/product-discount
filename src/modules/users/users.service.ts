@@ -10,12 +10,15 @@ export class UsersService {
     @Inject(USER_REPOSITORY) private readonly userRepository: typeof User,
   ) {}
 
-  // async create(user: UserDto): Promise<User> {
-  //   return await this.userRepository.create<User>(user);
-  // }
+  async create(user: UserDto): Promise<User> {
+    return await this.userRepository.create<User>(user as User);
+  }
 
   async findOneByEmail(email: string): Promise<User> {
-    return await this.userRepository.findOne<User>({ where: { email } });
+    return await this.userRepository.findOne<User>({
+      where: { email },
+      raw: true,
+    });
   }
 
   async getAll(): Promise<User[]> {
@@ -23,6 +26,9 @@ export class UsersService {
   }
 
   async findOneById(id: number): Promise<User> {
-    return await this.userRepository.findOne<User>({ where: { id } });
+    return await this.userRepository.findOne<User>({
+      where: { id },
+      raw: true,
+    });
   }
 }

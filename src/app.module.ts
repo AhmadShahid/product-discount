@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './core/database/database.module';
 import { UsersModule } from './modules/users/users.module';
+import { AuthModule } from './modules/auth/auth.module';
 const ENV = process.env.NODE_ENV;
 @Module({
   imports: [
@@ -13,6 +14,7 @@ const ENV = process.env.NODE_ENV;
     }),
     DatabaseModule,
     UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -20,6 +20,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=crudjs
       - POSTGRES_DB=aibees_ecommerce
+      - JWTKEY=shahid
+      - TOKEN_EXPIRATION=30m
     networks:
       - aibees
     depends_on:
