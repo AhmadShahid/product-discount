@@ -5,22 +5,28 @@ import {
   DataType,
   BelongsTo,
 } from 'sequelize-typescript';
+import { Discount } from '../discount/discount.entity';
 import { User } from '../users/user.entity';
 
 @Table
-export class Discount extends Model<Discount> {
+export class Category extends Model<Category> {
   @Column({
     type: DataType.STRING,
   })
   name: string;
 
   @Column({
-    type: DataType.DECIMAL(3, 2),
+    type: DataType.STRING,
   })
-  discountValue: number;
+  description: string;
 
   @BelongsTo(() => User, 'userId')
   user: User;
+  @BelongsTo(() => Discount, 'discountId')
+  discount: Discount;
+
+  @BelongsTo(() => Category, 'parentId')
+  parent: Category;
   createdAt: Date;
   updatedAt: Date;
   deletedAt?: Date;

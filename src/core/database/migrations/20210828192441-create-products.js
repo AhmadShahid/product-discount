@@ -16,6 +16,11 @@ module.exports = {
         allowNull: false,
       },
 
+      code: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+      },
       description: {
         type: Sequelize.TEXT,
         allowNull: true,
@@ -29,6 +34,11 @@ module.exports = {
         references: { model: 'Categories', key: 'id' },
         onUpdate: 'cascade',
         onDelete: 'cascade',
+      },
+
+      userId: {
+        type: Sequelize.INTEGER,
+        references: { model: 'Users', key: 'id' },
       },
       createdAt: {
         type: Sequelize.DATE,

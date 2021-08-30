@@ -28,6 +28,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Categories', key: 'id' },
       },
+
+      userId: {
+        type: Sequelize.INTEGER,
+        references: { model: 'Users', key: 'id' },
+      },
       createdAt: {
         type: Sequelize.DATE,
       },
