@@ -20,17 +20,20 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true,
       },
-      diccountId: {
+      discountId: {
         type: Sequelize.INTEGER,
         references: { model: 'Discounts', key: 'id' },
       },
       categoryId: {
         type: Sequelize.INTEGER,
         references: { model: 'Categories', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       createdAt: {
         type: Sequelize.DATE,
       },
+
       updatedAt: {
         type: Sequelize.DATE,
       },

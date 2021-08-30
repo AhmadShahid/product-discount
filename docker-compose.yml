@@ -32,7 +32,6 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     command: npx sequelize-cli db:migrate
-    command: npx sequelize db:seed:all
     command: npm run start:debug
     restart: unless-stopped
   prod:

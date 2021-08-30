@@ -1,5 +1,5 @@
 'use strict';
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -28,10 +28,9 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Users', [
-      {
-        name: 'Admin',
-      },
-    ]);
+    return queryInterface.bulkDelete("Users", null, {
+      truncate: true,
+      cascade: true,
+    });
   },
 };

@@ -20,13 +20,18 @@ module.exports = {
         type: Sequelize.STRING(500),
         allowNull: true,
       },
-      diccountId: {
+      discountId: {
         type: Sequelize.INTEGER,
         references: { model: 'Discounts', key: 'id' },
+      },
+      parentId: {
+        type: Sequelize.INTEGER,
+        references: { model: 'Categories', key: 'id' },
       },
       createdAt: {
         type: Sequelize.DATE,
       },
+
       updatedAt: {
         type: Sequelize.DATE,
       },

@@ -1,23 +1,33 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, MinLength, IsEmail, IsEnum } from 'class-validator';
+import {
+  IsNotEmpty,
+  MinLength,
+  IsEmail,
+  IsEnum,
+  Matches,
+  IsAlphanumeric,
+} from 'class-validator';
 
 enum Gender {
   MALE = 'male',
   FEMALE = 'female',
 }
+const passwordRegex = /((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
 
 export class UserDto {
-  @ApiProperty()
+  @ApiProperty({ example: 'Shahid Ahmad' })
   @IsNotEmpty()
   readonly name: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'shahidahmad527@gmail.com' })
   @IsNotEmpty()
   @IsEmail()
   readonly email: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'shahid123456' })
+  @Matches(passwordRegex, { message: 'Password too weak' })
   @IsNotEmpty()
+  @IsAlphanumeric()
   @MinLength(6)
   readonly password: string;
 
