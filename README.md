@@ -14,15 +14,31 @@
 $ npm install
 ```
 
-## Run Migrations and Seeding To Create a Database Schema with certain predefined data
+## Quick start
+
+- You will need to have `Node.js` installed, this project has been tested with Node version [12.X](https://nodejs.org/en/blog/release/v12.22.1/) and [14.X](https://nodejs.org/en/blog/release/v14.17.5/)
 
 ```bash
+# clone this repo
+$ git clone https://github.com/AhmadShahid/product-discount.git
+# go to product-discount dir
+$ cd product-discount
+# copy .env.template to .env.development for development
+$ cp .env.template .env.development
+# copy .env.template to .env.production for production
+$ cp .env.template .env.production
+# install dependencies
+$ npm install
+```
+
+## Run migrations and seeds command To create a database schema with data
+
+````bash
 # migrations
 $ npm run migrate
 
 # seed
 $ npm run seed
-
 ```
 
 ## Running the app
@@ -36,7 +52,34 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+````
+
+- Open http://localhost:5000/api/v1 in browser
+
+---
+
+## Docker
+
+- Install https://docs.docker.com/compose/install/
+
+```bash
+# copy .env.template to .env.development for dev
+$ cp .env.template .env.development
+# copy .env.template to .env.development for production
+$ cp .env.template .env.production
+# build or rebuild services
+$ docker-compose build
+# create and start development containers
+$ docker-compose up dev
+# create and start production containers
+$ docker-compose up prod
+# stop and remove resources
+$ docker-compose down
 ```
+
+- Open http://localhost:5000 in browser
+
+---
 
 ## Test
 
@@ -48,22 +91,34 @@ $ npm run test
 $ npm run test:cov
 ```
 
-## Trying out the API Using Docker
+## API Documentation
 
-You'll need [Docker](https://www.docker.com/) for that. Once you've got it installed on your machine, just clone the repo and run the
+The API documentation uses [swagger](https://swagger.io/) at http://localhost:5000/api/.
 
-```bash
-# development
-$ docker-compose up --build dev
-# production
-$ docker-compose up --build prod
-```
+## Features
 
-The API will be listening for your requests at `http://localhost/api`.
+- Is `100% Free` and `Open Source`
+- Is `100% Free` Secure
+- Token based authentication using JWT(JSON Web Token).
+- Easily add or update discounts
+- Multi-level category suport
+- Swagger & Docker support
+- Database Versioning support using Migrations.
+- Easy association of discount on category and product level
+- Get Discount percentage on products.
+- Unit test & full test coverage.
+- Supports [REST API](api/README.md) (Application Programming Interface)
+
+## Upcoming Features that is important for this system?
+
+- Add authorization to restrict users to performed different operations using roles and permissions.
+- Error handling and Error log support to easily track application issues.
+- API throttling support to restrict user to send to many request in specific time frame.
+- currently discount is fixed which is percentage based but in future we will create flexible and extensible promotion/discount engine to handle multiple scanerios (Gift Cards, Birthday Promotions, Special Day Promotions etc)
 
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please <a href="https://docs.nestjs.com/support" rel="nofollow">read more here</a>
+AI Commerce is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please <a href="https://docs.nestjs.com/support" rel="nofollow">read more here</a>
 
 ## What's the stack used in this project?
 
@@ -73,14 +128,12 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - **[Jest](https://facebook.github.io/jest/)** is a testing platform from Facebook Code. It's easy to configure and provides out-of-the-box mocking and code coverage reporting.
 - **[Docker](https://docker.com/)** takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development
 
-## What's coming in next release that is important for this system?
-
-- Add authorization to restrict users to performed different operations using roles and permissions.
-- Secured POST & DELETE endpoints (other that /entries.)
-- Swagger definition generated from code.
-
 ## Stay in touch
 
 - Author - [Shahid Ahmad]
 - Website - [https://www.ai-bees.io/](https://www.ai-bees.io/)
 - Twitter - [@shahid](https://twitter.com/shahida09454170)
+
+```
+
+```
