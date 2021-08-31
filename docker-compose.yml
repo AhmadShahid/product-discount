@@ -13,17 +13,7 @@ services:
     ports:
       - 5000:5000
       - 9229:9229
-    environment:
-      - PORT=5000
-      - DIALEX
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=crudjs
-      - POSTGRES_DB=aibees_ecommerce
-      - DB_DIALECT=postgres
-      - JWTKEY=shahid
-      - TOKEN_EXPIRATION=300m
+    env_file: .env.development
     networks:
       - aibees
     depends_on:
@@ -34,6 +24,7 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     command: npx sequelize-cli db:migrate
+    command: npx sequelize db:seed:all
     command: npm run start:debug
     restart: unless-stopped
   prod:
@@ -49,6 +40,7 @@ services:
     ports:
       - 8000:8000
       - 9229:9229
+    env_file: .env.production
     networks:
       - aibees
     depends_on:

@@ -3,7 +3,6 @@ import {
   Column,
   Model,
   DataType,
-  ForeignKey,
   BelongsTo,
 } from 'sequelize-typescript';
 import { Discount } from '../discount/discount.entity';

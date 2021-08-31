@@ -1,35 +1,28 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+  <a href="https://www.ai-bees.io/" target="blank"><img src="https://assets.website-files.com/601bb571b7f353ca5b3eb81c/606da82d43ccdd5cd0226492_Group%2010902.png" width="320" alt="AI Commerce Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">A discount based system that will give you the discount percentage on different products.</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+<a href="https://twitter.com/shahida09454170" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
 ```bash
 $ npm install
+```
+
+## Run Migrations and Seeding To Create a Database Schema with certain predefined data
+
+```bash
+# migrations
+$ npm run migrate
+
+# seed
+$ npm run seed
+
 ```
 
 ## Running the app
@@ -51,23 +44,36 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
 ```
 
+## Trying out the API Using Docker
+You'll need [Docker](https://www.docker.com/) for that. Once you've got it installed on your machine, just clone the repo
+for development run the `docker-compose up --build dev` command.
+for production run the `docker-compose up --build prod`
+The API will be listening for your requests at `http://localhost/api`.
+
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please <a href="https://docs.nestjs.com/support" rel="nofollow">read more here</a>
+
+## What's the stack used in this project?
+
+- **[Nest.js](https://nestjs.com/)** is a [TypeScript](https://www.typescriptlang.org/)-based Node.js API framework. It looks like if Angular and Express got physical. It's pretty knew and a bit rough around the edges, but [Kamil Myśliwiec](https://github.com/kamilmysliwiec) is doing an awesome job maintaining it.
+- **[Postgres](https://www.postgresql.org/)** is a very well know Open Source relational database.
+- **[SequelizeORM](https://sequelize.org/)** Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more projects.
+- **[Jest](https://facebook.github.io/jest/)** is a testing platform from Facebook Code. It's easy to configure and provides out-of-the-box mocking and code coverage reporting.
+- **[Docker](https://docker.com/)**  takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development
+
+## What's coming in next release that is important for this system?
+
+- Add authorization to restrict users to performed different operations using roles and permissions.
+- Secured POST & DELETE endpoints (other that /entries.)
+- Swagger definition generated from code.
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
+- Author - [Shahid Ahmad]
+- Website - [https://www.ai-bees.io/](https://www.ai-bees.io/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
