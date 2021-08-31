@@ -101,6 +101,18 @@ $ npm run test:cov
 
 The API documentation uses [swagger](https://swagger.io/) at http://localhost:5000/api/.
 
+# Application Structure Explaination
+
+> Application is divided into 6 modules
+
+    .
+    ├── App/Root Modules        # Each application has at least one module, a root module. The root module is the starting point Nest uses to build the application graph
+    ├── Core                    # This module is reponsible for database connection, migration and regiseter other guards, pipes etc that we can utilize on other feature modules
+    ├── User                    # This module is repsonsible for user saving, finding a user by email or id, etc
+    ├── Auth                    # This module is repsonsible for user login/signup
+    ├── Discount                # This module is handle operations related to the discount like creation of new discount, find an existing discount etc
+    ├── Order                   # This module is repsonsible for the calculation of  disocunt percentage in invoice final amount
+
 ## Features
 
 - Is `100% Free` and `Open Source`
