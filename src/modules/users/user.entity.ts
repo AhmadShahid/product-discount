@@ -19,7 +19,14 @@ export class User extends Model<User> {
     type: DataType.STRING,
   })
   gender: string;
+
+  @Column({
+    type: DataType.DATE,
+  })
   createdAt: Date;
+
+  @Column({
+    type: DataType.DATE,
+  })
   updatedAt: Date;
-  deletedAt?: Date;
 }

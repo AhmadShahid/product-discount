@@ -39,7 +39,13 @@ export class Product extends Model<Product> {
     type: DataType.INTEGER,
   })
   categoryId: number;
+  @Column({
+    type: DataType.DATE,
+  })
   createdAt: Date;
+
+  @Column({
+    type: DataType.DATE,
+  })
   updatedAt: Date;
-  deletedAt?: Date;
 }

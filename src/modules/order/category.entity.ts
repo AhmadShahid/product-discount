@@ -33,7 +33,13 @@ export class Category extends Model<Category> {
     type: DataType.INTEGER,
   })
   parentId: number;
+  @Column({
+    type: DataType.DATE,
+  })
   createdAt: Date;
+
+  @Column({
+    type: DataType.DATE,
+  })
   updatedAt: Date;
-  deletedAt?: Date;
 }

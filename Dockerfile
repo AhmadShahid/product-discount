@@ -7,11 +7,8 @@ COPY package*.json ./
 RUN npm install glob rimraf
 
 RUN npm install --only=development
-
 COPY . .
-
 RUN npm run build
-
 FROM node:14.4-alpine3.11 as production
 
 ARG NODE_ENV=production

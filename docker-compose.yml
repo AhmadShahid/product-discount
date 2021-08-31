@@ -23,8 +23,6 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-    command: npx sequelize-cli db:migrate
-    command: npx sequelize db:seed:all
     command: npm run start:debug
     restart: unless-stopped
   prod:
@@ -34,8 +32,6 @@ services:
       context: .
       target: production
       dockerfile: ./Dockerfile
-    command: npx sequelize-cli db:migrate
-    command: npx sequelize db:seed:all
     command: npm run start:prod
     ports:
       - 8000:8000

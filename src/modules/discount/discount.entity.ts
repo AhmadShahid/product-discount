@@ -21,7 +21,14 @@ export class Discount extends Model<Discount> {
 
   @BelongsTo(() => User, 'userId')
   user: User;
+
+  @Column({
+    type: DataType.DATE,
+  })
   createdAt: Date;
+
+  @Column({
+    type: DataType.DATE,
+  })
   updatedAt: Date;
-  deletedAt?: Date;
 }
