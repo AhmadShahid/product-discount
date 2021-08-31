@@ -23,17 +23,17 @@ $ npm install
 $ git clone https://github.com/AhmadShahid/product-discount.git
 # go to product-discount dir
 $ cd product-discount
-# copy .env.template to .env.development for development
-$ cp .env.template .env.development
-# copy .env.template to .env.production for production
-$ cp .env.template .env.production
+# copy .env.example to .env.development for development
+$ cp .env.example .env.development
+# copy .env.example to .env.production for production
+$ cp .env.example .env.production
 # install dependencies
 $ npm install
 ```
 
-## Run migrations and seeds command To create a database schema with data
+## Run migrations and seeds command to create a database schema with data
 
-````bash
+```bash
 # migrations
 $ npm run migrate
 
@@ -52,21 +52,19 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-````
+```
 
-- Open http://localhost:5000/api/v1 in browser
-
----
+- Open http://localhost:5000/api/ in browser
 
 ## Docker
 
 - Install https://docs.docker.com/compose/install/
 
 ```bash
-# copy .env.template to .env.development for dev
-$ cp .env.template .env.development
-# copy .env.template to .env.development for production
-$ cp .env.template .env.production
+# copy .env.example to .env.development for dev
+$ cp .env.example .env.development
+# copy .env.example to .env.development for production
+$ cp .env.example .env.production
 # build or rebuild services
 $ docker-compose build
 # create and start development containers
@@ -77,9 +75,7 @@ $ docker-compose up prod
 $ docker-compose down
 ```
 
-- Open http://localhost:5000 in browser
-
----
+- Open http://localhost:5000/api/ in browser
 
 ## Test
 
@@ -133,7 +129,3 @@ AI Commerce is an MIT-licensed open source project. It can grow thanks to the sp
 - Author - [Shahid Ahmad]
 - Website - [https://www.ai-bees.io/](https://www.ai-bees.io/)
 - Twitter - [@shahid](https://twitter.com/shahida09454170)
-
-```
-
-```
