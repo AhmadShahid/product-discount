@@ -6,6 +6,7 @@ import {
   ApiParam,
   ApiTags,
 } from '@nestjs/swagger';
+import { DoesDiscountExist } from 'src/core/guards/doesDiscountExist.guard';
 import { Discount } from './discount.entity';
 import { DiscountService } from './discount.service';
 import { CreateDiscountDto } from './dto/create-discount.dto';
@@ -25,6 +26,7 @@ export class DiscountController {
 
   @UseGuards(AuthGuard('jwt'))
   @ApiOperation({ description: 'Create new discount' })
+  @UseGuards(DoesDiscountExist)
   @Post()
   createDiscount(@Body() discountDto: CreateDiscountDto) {
     return this.discountService.create(discountDto);

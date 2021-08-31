@@ -46,6 +46,15 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          id: 5,
+          code: '1005',
+          name: 'Green Paint',
+          categoryId: 7,
+          userId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {},
     );

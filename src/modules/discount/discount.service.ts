@@ -24,4 +24,11 @@ export class DiscountService {
       raw: true,
     });
   }
+
+  async findByName(name: string): Promise<Discount> {
+    return await this.discountRepository.findOne<Discount>({
+      where: { name },
+      raw: true,
+    });
+  }
 }

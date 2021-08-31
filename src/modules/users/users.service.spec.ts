@@ -35,13 +35,13 @@ describe('UsersService', () => {
   });
 
   it('get user by email', async () => {
-    expect(await service.findOneByEmail('shahidahmad527@gmail.com')).toEqual(
+    expect(await service.findByEmail('shahidahmad527@gmail.com')).toEqual(
       mockUser,
     );
   });
 
   it('get user by id', async () => {
-    expect(await service.findOneById(1)).toEqual(mockUser);
+    expect(await service.findById(1)).toEqual(mockUser);
   });
 
   it('should add a user', async () => {

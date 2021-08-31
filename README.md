@@ -17,6 +17,7 @@ $ npm install
 ## Quick start
 
 - You will need to have `Node.js` installed, this project has been tested with Node version [12.X](https://nodejs.org/en/blog/release/v12.22.1/) and [14.X](https://nodejs.org/en/blog/release/v14.17.5/)
+- You will also need to have install `Postgres` if you are running it without docker
 
 ```bash
 # clone this repo
@@ -29,6 +30,8 @@ $ cp .env.example .env.development
 $ cp .env.example .env.production
 # install dependencies
 $ npm install
+# create database on postgre
+$ CREATE DATABASE aibees_ecommerce;
 ```
 
 ## Run migrations and seeds command to create a database schema with data
@@ -71,6 +74,13 @@ $ docker-compose build
 $ docker-compose up dev
 # create and start production containers
 $ docker-compose up prod
+# to run migration and seeder we need Container Id and to get container execute the below command
+$ docker ps
+# above command will give you all the container just copy the id of the container where name is nestjs-api-dev:1.0.0
+# execute the below command to run the migrations
+$ docker exec -it ${Container Id} npx sequelize-cli db:migrate
+# to run seeders
+$ docker exec -it ${Container Id} npx sequelize-cli db:seed:all
 # stop and remove resources
 $ docker-compose down
 ```
@@ -96,6 +106,7 @@ The API documentation uses [swagger](https://swagger.io/) at http://localhost:50
 - Is `100% Free` and `Open Source`
 - Is `100% Free` Secure
 - Token based authentication using JWT(JSON Web Token).
+- Validations support e.g email, passward week, unique etc.
 - Easily add or update discounts
 - Multi-level category suport
 - Swagger & Docker support
@@ -110,6 +121,7 @@ The API documentation uses [swagger](https://swagger.io/) at http://localhost:50
 - Add authorization to restrict users to performed different operations using roles and permissions.
 - Error handling and Error log support to easily track application issues.
 - API throttling support to restrict user to send to many request in specific time frame.
+- Currency Support
 - currently discount is fixed which is percentage based but in future we will create flexible and extensible promotion/discount engine to handle multiple scanerios (Gift Cards, Birthday Promotions, Special Day Promotions etc)
 
 ## Support

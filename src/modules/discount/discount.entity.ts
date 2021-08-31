@@ -15,7 +15,7 @@ export class Discount extends Model<Discount> {
   name: string;
 
   @Column({
-    type: DataType.DECIMAL(3, 2),
+    type: DataType.DECIMAL(5, 2),
   })
   discountValue: number;
 

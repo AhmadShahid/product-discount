@@ -60,6 +60,15 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+
+        {
+          id: 7,
+          name: 'Paint',
+          description: 'All Paint items',
+          userId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {},
     );

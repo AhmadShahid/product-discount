@@ -14,14 +14,14 @@ export class UsersService {
     return await this.userRepository.create<User>(user as User);
   }
 
-  async findOneByEmail(email: string): Promise<User> {
+  async findByEmail(email: string): Promise<User> {
     return await this.userRepository.findOne<User>({
       where: { email },
       raw: true,
     });
   }
 
-  async findOneById(id: number): Promise<User> {
+  async findById(id: number): Promise<User> {
     return await this.userRepository.findOne<User>({
       where: { id },
       raw: true,

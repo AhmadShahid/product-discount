@@ -4,7 +4,7 @@ import { getModelToken } from '@nestjs/sequelize';
 import { Discount } from './discount.entity';
 import { CreateDiscountDto } from './dto/create-discount.dto';
 
-const mockDiscountEntity = <Discount>{ name: 'mi', discountValue: 5 };
+const mockDiscountEntity = <Discount>{ id: 1, name: 'mi', discountValue: 5 };
 
 describe('DiscountService', () => {
   let service: DiscountService;
@@ -33,6 +33,14 @@ describe('DiscountService', () => {
 
   it('should get the discounts', async () => {
     expect(await service.getAll()).toEqual([mockDiscountEntity]);
+  });
+
+  it('should get the discount by name', async () => {
+    expect(await service.findByName('mi')).toEqual(mockDiscountEntity);
+  });
+
+  it('should get the discount by id', async () => {
+    expect(await service.findById(1)).toEqual(mockDiscountEntity);
   });
 
   it('should add a discount', async () => {

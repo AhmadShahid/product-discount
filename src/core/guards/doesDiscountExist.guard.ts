@@ -5,12 +5,11 @@ import {
   ForbiddenException,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
-
-import { UsersService } from '../../modules/users/users.service';
+import { DiscountService } from 'src/modules/discount/discount.service';
 
 @Injectable()
-export class DoesUserExist implements CanActivate {
-  constructor(private readonly userService: UsersService) {}
+export class DoesDiscountExist implements CanActivate {
+  constructor(private readonly discountService: DiscountService) {}
 
   canActivate(
     context: ExecutionContext,
@@ -20,9 +19,9 @@ export class DoesUserExist implements CanActivate {
   }
 
   async validateRequest(request) {
-    const userExist = await this.userService.findByEmail(request.body.email);
+    const userExist = await this.discountService.findByName(request.body.name);
     if (userExist) {
-      throw new ForbiddenException('This email already exist');
+      throw new ForbiddenException('Discount with same name already exist');
     }
     return true;
   }

@@ -39,6 +39,7 @@ export class OrderService {
     if (categoryDetail && categoryDetail.discount !== null) {
       return categoryDetail.discount.discountValue;
     }
+    if (categoryDetail.parentId === null) return -1;
     return this.getCategoryDiscountValue(categoryDetail.parentId);
   }
   async findCategoryById(id): Promise<Category> {
@@ -63,11 +64,11 @@ export class OrderService {
 
     let discountValue = -1;
     if (productDetail.discount) {
-      discountValue = productDetail.discount.discountValue;
+      discountValue = +productDetail.discount.discountValue;
     } else {
-      discountValue = await this.getCategoryDiscountValue(
+      discountValue = +(await this.getCategoryDiscountValue(
         productDetail.categoryId,
-      );
+      ));
     }
 
     return <OrderDiscountResponseDto>{
