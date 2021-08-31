@@ -34,6 +34,7 @@ module.exports = {
         references: { model: 'Categories', key: 'id' },
         onUpdate: 'cascade',
         onDelete: 'cascade',
+        allowNull: false,
       },
 
       userId: {
@@ -45,9 +46,6 @@ module.exports = {
       },
 
       updatedAt: {
-        type: Sequelize.DATE,
-      },
-      deletedAt: {
         type: Sequelize.DATE,
       },
     });

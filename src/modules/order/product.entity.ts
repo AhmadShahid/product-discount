@@ -3,13 +3,20 @@ import {
   Column,
   Model,
   DataType,
+  ForeignKey,
   BelongsTo,
 } from 'sequelize-typescript';
 import { Discount } from '../discount/discount.entity';
 import { User } from '../users/user.entity';
+import { Category } from './category.entity';
 
 @Table
-export class Category extends Model<Category> {
+export class Product extends Model<Product> {
+  @Column({
+    type: DataType.STRING,
+  })
+  code: string;
+
   @Column({
     type: DataType.STRING,
   })
@@ -22,11 +29,17 @@ export class Category extends Model<Category> {
 
   @BelongsTo(() => User, 'userId')
   user: User;
+
   @BelongsTo(() => Discount, 'discountId')
   discount: Discount;
 
-  @BelongsTo(() => Category, 'parentId')
-  parent: Category;
+  @BelongsTo(() => Category, 'categoryId')
+  category: Category;
+
+  @Column({
+    type: DataType.INTEGER,
+  })
+  categoryId: number;
   createdAt: Date;
   updatedAt: Date;
   deletedAt?: Date;

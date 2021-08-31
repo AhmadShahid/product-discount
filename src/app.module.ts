@@ -6,7 +6,7 @@ import { DatabaseModule } from './core/database/database.module';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { DiscountModule } from './modules/discount/discount.module';
-import { ProductModule } from './modules/product/product.module';
+import { OrderModule } from './modules/order/order.module';
 const ENV = process.env.NODE_ENV;
 @Module({
   imports: [
@@ -18,7 +18,7 @@ const ENV = process.env.NODE_ENV;
     UsersModule,
     AuthModule,
     DiscountModule,
-    ProductModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [AppService],

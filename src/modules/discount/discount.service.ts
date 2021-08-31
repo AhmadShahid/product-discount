@@ -1,12 +1,12 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { DISCOUNT_REPOSITORY } from 'src/core/constants';
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/sequelize';
 import { Discount } from './discount.entity';
 import { CreateDiscountDto } from './dto/create-discount.dto';
 
 @Injectable()
 export class DiscountService {
   constructor(
-    @Inject(DISCOUNT_REPOSITORY)
+    @InjectModel(Discount)
     private readonly discountRepository: typeof Discount,
   ) {}
 

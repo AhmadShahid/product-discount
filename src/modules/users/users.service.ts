@@ -1,13 +1,13 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
 import { User } from './user.entity';
 import { UserDto } from './dto/user.dto';
-import { USER_REPOSITORY } from '../../core/constants';
+import { InjectModel } from '@nestjs/sequelize';
 
 @Injectable()
 export class UsersService {
   constructor(
-    @Inject(USER_REPOSITORY) private readonly userRepository: typeof User,
+    @InjectModel(User) private readonly userRepository: typeof User,
   ) {}
 
   async create(user: UserDto): Promise<User> {
@@ -19,10 +19,6 @@ export class UsersService {
       where: { email },
       raw: true,
     });
-  }
-
-  async getAll(): Promise<User[]> {
-    return await this.userRepository.findAll<User>();
   }
 
   async findOneById(id: number): Promise<User> {
