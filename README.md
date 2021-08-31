@@ -49,9 +49,16 @@ $ npm run test:cov
 ```
 
 ## Trying out the API Using Docker
-You'll need [Docker](https://www.docker.com/) for that. Once you've got it installed on your machine, just clone the repo
-for development run the `docker-compose up --build dev` command.
-for production run the `docker-compose up --build prod`
+
+You'll need [Docker](https://www.docker.com/) for that. Once you've got it installed on your machine, just clone the repo and run the
+
+```bash
+# development
+$ docker-compose up --build dev
+# production
+$ docker-compose up --build prod
+```
+
 The API will be listening for your requests at `http://localhost/api`.
 
 ## Support
@@ -64,7 +71,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - **[Postgres](https://www.postgresql.org/)** is a very well know Open Source relational database.
 - **[SequelizeORM](https://sequelize.org/)** Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more projects.
 - **[Jest](https://facebook.github.io/jest/)** is a testing platform from Facebook Code. It's easy to configure and provides out-of-the-box mocking and code coverage reporting.
-- **[Docker](https://docker.com/)**  takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development
+- **[Docker](https://docker.com/)** takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development
 
 ## What's coming in next release that is important for this system?
 
@@ -76,4 +83,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 - Author - [Shahid Ahmad]
 - Website - [https://www.ai-bees.io/](https://www.ai-bees.io/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Twitter - [@shahid](https://twitter.com/shahida09454170)
