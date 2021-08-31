@@ -19,7 +19,7 @@ export class UserDto {
   @IsNotEmpty()
   readonly name: string;
 
-  @ApiProperty({ example: 'shahidahmad527@gmail.com' })
+  @ApiProperty({ example: 'test@gmail.com' })
   @IsNotEmpty()
   @IsEmail()
   readonly email: string;

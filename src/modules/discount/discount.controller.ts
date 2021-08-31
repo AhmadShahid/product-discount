@@ -2,6 +2,7 @@ import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import {
   ApiBearerAuth,
+  ApiConflictResponse,
   ApiOperation,
   ApiParam,
   ApiTags,
@@ -26,6 +27,7 @@ export class DiscountController {
 
   @UseGuards(AuthGuard('jwt'))
   @ApiOperation({ description: 'Create new discount' })
+  @ApiConflictResponse({ description: 'Discount already exists' })
   @UseGuards(DoesDiscountExist)
   @Post()
   createDiscount(@Body() discountDto: CreateDiscountDto) {

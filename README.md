@@ -97,6 +97,11 @@ $ npm run test
 $ npm run test:cov
 ```
 
+## Demo Users
+
+- admin@gmail.com/admin123
+- customre@gmail.com/customer123
+
 ## API Documentation
 
 The API documentation uses [swagger](https://swagger.io/) at http://localhost:5000/api/.

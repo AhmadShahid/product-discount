@@ -1,11 +1,7 @@
-import {
-  CanActivate,
-  ExecutionContext,
-  Injectable,
-  ForbiddenException,
-} from '@nestjs/common';
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { DiscountService } from 'src/modules/discount/discount.service';
+import { RecordExistsException } from '../exceptions/record.exists.exception';
 
 @Injectable()
 export class DoesDiscountExist implements CanActivate {
@@ -19,9 +15,11 @@ export class DoesDiscountExist implements CanActivate {
   }
 
   async validateRequest(request) {
-    const userExist = await this.discountService.findByName(request.body.name);
-    if (userExist) {
-      throw new ForbiddenException('Discount with same name already exist');
+    const discountExist = await this.discountService.findByName(
+      request.body.name,
+    );
+    if (discountExist) {
+      throw new RecordExistsException(request.body.name);
     }
     return true;
   }

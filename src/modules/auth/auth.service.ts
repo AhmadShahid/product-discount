@@ -4,6 +4,8 @@ import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
 import { UserDto } from '../users/dto/user.dto';
 import { LoginRequestDto } from '../users/dto/login.request.dto';
+import { InvalidCurrentPasswordException } from 'src/core/exceptions/invalid-current-password.exception';
+import { InvalidCredentialsException } from 'src/core/exceptions/invalid-credientails.exception';
 
 @Injectable()
 export class AuthService {
@@ -15,11 +17,11 @@ export class AuthService {
   async validateUser(email: string, pass: string) {
     const user = await this.userService.findByEmail(email);
     if (!user) {
-      return null;
+      throw new InvalidCredentialsException();
     }
     const match = await this.comparePassword(pass, user.password);
     if (!match) {
-      return null;
+      throw new InvalidCurrentPasswordException();
     }
     return user;
   }

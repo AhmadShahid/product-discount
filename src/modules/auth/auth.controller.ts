@@ -9,6 +9,7 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import {
   ApiBody,
+  ApiConflictResponse,
   ApiCreatedResponse,
   ApiOkResponse,
   ApiOperation,
@@ -39,6 +40,7 @@ export class AuthController {
   @ApiCreatedResponse({
     description: 'The user has been signup successfully.',
   })
+  @ApiConflictResponse({ description: 'User already exists' })
   @UseGuards(DoesUserExist)
   @Post('signup')
   async signUp(@Body() user: UserDto) {
