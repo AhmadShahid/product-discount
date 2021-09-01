@@ -139,6 +139,7 @@ The API documentation uses [swagger](https://swagger.io/) at http://localhost:50
 - Error handling and Error log support to easily track application issues.
 - API throttling support to restrict user to send to many request in specific time frame.
 - Currency Support
+- API Testing support
 - currently discount is fixed which is percentage based but in future we will create flexible and extensible promotion/discount engine to handle multiple scanerios (Gift Cards, Birthday Promotions, Special Day Promotions etc)
 
 ## Support
