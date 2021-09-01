@@ -1,5 +1,7 @@
 <p align="center">
-  <a href="https://www.ai-bees.io/" target="blank"><img src="https://assets.website-files.com/601bb571b7f353ca5b3eb81c/606da82d43ccdd5cd0226492_Group%2010902.png" width="320" alt="AI Commerce Logo" /></a>
+  <a href="https://www.ai-bees.io/" target="blank">
+  # AI Commerce
+  </a>
 </p>
 
   <p align="center">A discount based system that will give you the discount percentage on different products.</p>
