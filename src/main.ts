@@ -16,7 +16,6 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1');
   app.useGlobalPipes(new ValidateInputPipe());
   configSwagger(app);
-  console.log(PORT, 'SAFDSFDASFDDAFS');
   await app.listen(PORT || 8000);
 }
 bootstrap();
