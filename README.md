@@ -18,7 +18,7 @@ $ npm install
 ## Quick start
 
 - You will need to have `Node.js` installed, this project has been tested with Node version [12.X](https://nodejs.org/en/blog/release/v12.22.1/) and [14.X](https://nodejs.org/en/blog/release/v14.17.5/)
-- You will also need to have install `Postgres` if you are running it without docker
+- You will also need to install `Postgres` if you are running it without docker
 
 ```bash
 # clone this repo
@@ -122,7 +122,7 @@ The API documentation uses [swagger](https://swagger.io/) at http://localhost:50
 ## Features
 
 - Is `100% Free` and `Open Source`
-- Is `100% Free` Secure
+- Is `100%` Secure
 - Token based authentication using JWT(JSON Web Token).
 - Validations support e.g email, passward week, unique etc.
 - Easily add or update discounts
