@@ -31,7 +31,7 @@ $ cp .env.example .env.development
 $ cp .env.example .env.production
 # install dependencies
 $ npm install
-# create database on postgre
+# create database on postgres
 $ CREATE DATABASE aibees_ecommerce;
 ```
 
@@ -101,7 +101,7 @@ $ npm run test:cov
 ## Demo Users
 
 - admin@gmail.com/admin123
-- customre@gmail.com/customer123
+- customer@gmail.com/customer123
 
 ## API Documentation
 
@@ -113,7 +113,7 @@ The API documentation uses [swagger](https://swagger.io/) at http://localhost:50
 
     .
     ├── App/Root Modules        # Each application has at least one module, a root module. The root module is the starting point Nest uses to build the application graph
-    ├── Core                    # This module is reponsible for database connection, migration and regiseter other guards, pipes etc that we can utilize on other feature modules
+    ├── Core                    # This module is reponsible for database connection, migration and register other guards, pipes etc that we can utilize on other feature modules
     ├── User                    # This module is repsonsible for user saving, finding a user by email or id, etc
     ├── Auth                    # This module is repsonsible for user login/signup
     ├── Discount                # This module is handle operations related to the discount like creation of new discount, find an existing discount etc
